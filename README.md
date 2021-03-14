@@ -11,9 +11,9 @@ ffmpeg-dir [global_options] {[input_directory_options] -i input_url} ... {[outpu
 	-o				output directory url
 	extention		extention of the output file (e.g.	.mp3, .mp4, .mkv, etc..)
 	
-\ For other options use the options of ffmpeg.
+For other options use the options of ffmpeg.
 	
-\ The following are the result of ffmpeg --help
+The following are the result of ffmpeg --help
 
 ffmpeg version 4.2.4-1ubuntu0.1 Copyright (c) 2000-2020 the FFmpeg developers
   built with gcc 9 (Ubuntu 9.3.0-10ubuntu2)
