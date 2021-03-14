@@ -1,0 +1,84 @@
+#!/bin/bash
+
+#takes entire directory of media files and convert it using ffmpeg
+
+#	1.	take all options before input
+#	2.	save input url somewhere
+#	3.	take all options after output
+#	4.	convert all files under input directory
+#	5.	save them to a temporary folder
+#	6.	move all of them to output directory
+
+input="" #input directory
+command1="ffmpeg "	#first part of ffmpeg command
+command2=""	#second part of ffmpeg command
+dir=`pwd` #current working directory
+
+#write every options to variable command1
+while [ $1 ]; do
+	case $1 in
+		-h|--help)
+			cat ../lib/ffmpeg-dir/help
+			ffmpeg --help
+			exit 0
+		;;
+		-i)
+			input=$2
+			break;
+		;;
+		*)
+			command1+="$1 "
+		;;
+esac
+
+#move $x to $x+1
+shift
+
+done;
+
+#move $x to $x+2
+shift
+shift
+
+#write every options to variable command2
+while [ $1 ]; do
+	case $1 in
+		-o)
+			output=$2
+			break
+		;;
+		*)
+			command2+="$1 "
+		;;
+	esac
+
+#move $x to $x+1
+shift
+
+done
+
+#move $x to $x+1
+shift
+
+cd $input #move current directory to input
+
+mkdir temp #temporary folder
+
+#convert one by one and move to temporary folder
+for i in *; do
+	$command1-i "$i" $command2"temp/$i$2"
+done
+
+cd $dir #move to where this is executed
+mkdir "$output"	#make output folder
+mv -n "$input/temp" "$output" #move result to output
+cd "$dir" #move to where this is executed
+cd "$output/temp" #move to output/temp
+
+#move out of temp folder
+for i in *; do
+		mv -T "$i" "../$i"
+done
+
+cd ..
+rmdir temp #remove temp folder

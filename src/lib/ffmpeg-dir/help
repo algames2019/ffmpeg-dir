@@ -1,0 +1,13 @@
+USAGE
+	ffmpeg-dir [global_options] {[input_directory_options] -i input_url} ... {[output_directory_options] -o output_url} extension
+	
+OPTIONS
+	-i				input directory url
+	-o				output directory url
+	extention		extention of the output file (e.g.	.mp3, .mp4, .mkv, etc..)
+	
+	For other options use the options of ffmpeg.
+	
+	The following are the result of `ffmpeg --help`
+
+
