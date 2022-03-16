@@ -4,17 +4,20 @@ ffmpeg directory conversion
 Uses ffmpeg to convert entire directory of media. ffmpeg-dir uses the same options as ffmpeg except for the input and output
 
 # Usage
+```
 ffmpeg-dir [global_options] {[input_directory_options] -i input_url} ... {[output_directory_options] -o output_url} extension
-
+```
 # Options
+```
   -i				input directory url
 	-o				output directory url
 	extention		extention of the output file (e.g.	.mp3, .mp4, .mkv, etc..)
+```
+For other options use the options of `ffmpeg`.
 	
-For other options use the options of ffmpeg.
-	
-The following are the result of ffmpeg --help
+The following are the result of `ffmpeg --help`
 
+```
 ffmpeg version 4.2.4-1ubuntu0.1 Copyright (c) 2000-2020 the FFmpeg developers
   built with gcc 9 (Ubuntu 9.3.0-10ubuntu2)
   configuration: --prefix=/usr --extra-version=1ubuntu0.1 --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --arch=amd64 --enable-gpl --disable-stripping --enable-avresample --disable-filter=resample --enable-avisynth --enable-gnutls --enable-ladspa --enable-libaom --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libcodec2 --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libjack --enable-libmp3lame --enable-libmysofa --enable-libopenjpeg --enable-libopenmpt --enable-libopus --enable-libpulse --enable-librsvg --enable-librubberband --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvidstab --enable-libvorbis --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx265 --enable-libxml2 --enable-libxvid --enable-libzmq --enable-libzvbi --enable-lv2 --enable-omx --enable-openal --enable-opencl --enable-opengl --enable-sdl2 --enable-libdc1394 --enable-libdrm --enable-libiec61883 --enable-nvenc --enable-chromaprint --enable-frei0r --enable-libx264 --enable-shared
@@ -135,3 +138,4 @@ Subtitle options:
 -fix_sub_duration   fix subtitles duration
 -canvas_size size   set canvas size (WxH or abbreviation)
 -spre preset        set the subtitle options to the indicated preset
+```
